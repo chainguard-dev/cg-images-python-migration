@@ -1,20 +1,20 @@
 services:
-  backend:
+  flask-app:
     build:
-      context: backend
+      context: flask-app
     restart: always
     ports:
       - 8000:8000
     networks:
       - backnet
       - frontnet
-  proxy:
-    build: proxy
+  nginx:
+    build: nginx
     restart: always
     ports:
       - 80:80
     depends_on: 
-      - backend
+      - flask-app
     networks:
       - frontnet
 
