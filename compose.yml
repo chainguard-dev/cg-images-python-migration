@@ -1,0 +1,23 @@
+services:
+  backend:
+    build:
+      context: backend
+    restart: always
+    ports:
+      - 8000:8000
+    networks:
+      - backnet
+      - frontnet
+  proxy:
+    build: proxy
+    restart: always
+    ports:
+      - 80:80
+    depends_on: 
+      - backend
+    networks:
+      - frontnet
+
+networks:
+  backnet:
+  frontnet:
