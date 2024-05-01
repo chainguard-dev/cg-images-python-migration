@@ -1,25 +1,12 @@
 # syntax=docker/dockerfile:1
 
-FROM cgr.dev/chainguard/python:latest-dev as dev
+FROM python
 
-WORKDIR /flask-app
+WORKDIR /python-docker
 
-RUN python -m venv venv
-ENV PATH="/flask-app/venv/bin":$PATH
 COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
-FROM cgr.dev/chainguard/python:latest
+COPY . .
 
-WORKDIR /flask-app
-
-COPY app.py app.py
-COPY --from=dev /flask-app/venv /flask-app/venv
-ENV PATH="/flask-app/venv/bin:$PATH"
-
-EXPOSE 5000
-
-
-ENTRYPOINT ["python"]
-CMD ["-m" , "flask", "run", "--host=0.0.0.0"]
-
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
