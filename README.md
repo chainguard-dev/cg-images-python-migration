@@ -1,4 +1,3 @@
-
 # Migrating a Flask Application to GC Images
 
-Sameple application showing a migration to Chainguard Images for a Flask application.
+This branch shows a simple containerized Flask application using a default Python image as base and before a migration to Chainguard Images.
