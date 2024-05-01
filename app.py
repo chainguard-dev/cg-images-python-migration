@@ -3,7 +3,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return '<h1>Example Flask Application</h1>'
+    octopuses = '🐙' * 10
+    return f'<h1>Inky Is Best</h1><p>{octopuses}</p>'
 
 
 if __name__ == "__main__":
