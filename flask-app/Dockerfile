@@ -19,6 +19,6 @@ ENV PATH="/flask-app/venv/bin:$PATH"
 
 EXPOSE 8000
 
-ENTRYPOINT ["python",, "-m", "gunicorn", "-b", "0.0.0.0:8000", "app:app"]
+ENTRYPOINT ["python", "-m", "gunicorn", "-b", "0.0.0.0:8000", "app:app"]
 
 
