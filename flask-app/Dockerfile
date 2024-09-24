@@ -17,10 +17,8 @@ COPY app.py app.py
 COPY --from=dev /flask-app/venv /flask-app/venv
 ENV PATH="/flask-app/venv/bin:$PATH"
 
-EXPOSE 5000
+EXPOSE 8000
 
-
-ENTRYPOINT ["python"]
-CMD ["-m", "gunicorn", "-b", "0.0.0.0:8000", "app:app"]
+ENTRYPOINT ["python", "-m", "gunicorn", "-b", "0.0.0.0:8000", "app:app"]
 
 
