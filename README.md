@@ -7,4 +7,5 @@ Start with:
 ```bash
 docker compose up
 ```
+
 The application should be visible at both `0.0.0.0` and `0.0.0.0:80`.
