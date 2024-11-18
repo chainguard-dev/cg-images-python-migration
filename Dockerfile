@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM cgr.dev/chainguard/python:latest-dev as dev
+FROM cgr.dev/chainguard/python:latest-dev AS dev
 
 WORKDIR /flask-app
 
